@@ -1,49 +1,38 @@
 /* ==========================================================================
-                        Workspace Buttons Customization                    
+                        Workspace Buttons Customization
    ========================================================================== */
 
-/* ===                  Defaults (Override via about:config)              === */
+/* ===                      CSS Variable Defaults                         === */
 :root {
   --ws-border-radius: 10px;
   --ws-color:        color-mix(in srgb, currentColor  8%, transparent);
   --ws-color-hover:  color-mix(in srgb, currentColor 14%, transparent);
   --ws-color-min:    color-mix(in srgb, currentColor  5%, transparent);
   --ws-color-shadow: color-mix(in srgb, currentColor 20%, transparent);
-  --ws-grayscale: 100%; /* 0% = full colour when inactive */
+  --ws-grayscale:    100%;
 }
 
 
-/* =================          about:config Overrides          ===============
-  
- *  All variables below can be set in about:config without editing this file.
- *  Create an integer or string pref with the matching name, then restart.
-  
- *  ws-style           0 | 1 | 2       Workspaces style       (default: 1)
- *  ws-radius          4|6|8|12|16|20  Workspaces Roundness   (dflt: 10)
- *  ws-grayscale       0|25|50|75      Icon Grayscale %       (dflt: 100)
- *  ws-opacity         4 | 12 | 20     Workspaces Opacity     (dflt: 8|14|5|20)
- *  ws-hide-indicator  true            Hides Workspace Label  (dflt: true)
- 
- *  ws-hide-glow       true            Hides WS Glow on Hover (Only style 1)
-  
+/* ==========================================================================
+                      about:config / Preferences Overrides
+   All settings below are configurable via the Tranquil preferences panel.
    ========================================================================== */
 
-
-/* ====     ws-radius | RUNS AS: if("ws-radius" is n), set all to n      ==== */
-@media (-moz-pref("ws-radius", 4))  { :root { --ws-border-radius: 4px;  } }
-@media (-moz-pref("ws-radius", 6))  { :root { --ws-border-radius: 6px;  } }
-@media (-moz-pref("ws-radius", 8))  { :root { --ws-border-radius: 8px;  } }
+/* ws-radius */
+@media (-moz-pref("ws-radius",  4)) { :root { --ws-border-radius:  4px; } }
+@media (-moz-pref("ws-radius",  6)) { :root { --ws-border-radius:  6px; } }
+@media (-moz-pref("ws-radius",  8)) { :root { --ws-border-radius:  8px; } }
 @media (-moz-pref("ws-radius", 12)) { :root { --ws-border-radius: 12px; } }
 @media (-moz-pref("ws-radius", 16)) { :root { --ws-border-radius: 16px; } }
 @media (-moz-pref("ws-radius", 20)) { :root { --ws-border-radius: 20px; } }
 
-/* ====     ws-grayscale | SAME AS ABOVE                                 ==== */
-@media (-moz-pref("ws-grayscale", 0))  { :root { --ws-grayscale: 0%;   } }
-@media (-moz-pref("ws-grayscale", 25)) { :root { --ws-grayscale: 25%;  } }
-@media (-moz-pref("ws-grayscale", 50)) { :root { --ws-grayscale: 50%;  } }
-@media (-moz-pref("ws-grayscale", 75)) { :root { --ws-grayscale: 75%;  } }
+/* ws-grayscale */
+@media (-moz-pref("ws-grayscale",  0)) { :root { --ws-grayscale:  0%; } }
+@media (-moz-pref("ws-grayscale", 25)) { :root { --ws-grayscale: 25%; } }
+@media (-moz-pref("ws-grayscale", 50)) { :root { --ws-grayscale: 50%; } }
+@media (-moz-pref("ws-grayscale", 75)) { :root { --ws-grayscale: 75%; } }
 
-/* ====     ws-opacity | Sets all fill values relative to chosen base    ==== */
+/* ws-opacity */
 @media (-moz-pref("ws-opacity", 4)) {
   :root {
     --ws-color:        color-mix(in srgb, currentColor  4%, transparent);
@@ -71,7 +60,7 @@
 
 
 /* ==========================================================================
-                            Workspace Creation Panel                    
+                            Workspace Creation Panel
    ========================================================================== */
 
 .zen-workspace-creation-name-wrapper,
@@ -103,15 +92,13 @@ button.zen-workspace-creation-profile,
 /* ==========================================================================
                   Workspace Indicator [Name Label & Hover]
    ========================================================================== */
-   
-/* =======        ws-hide-indicator | Toggle Workspace Label          ======= */
+
+/* ws-hide-indicator: hides the workspace label beneath Essentials */
 @media (-moz-pref("ws-hide-indicator")) {
   .zen-current-workspace-indicator { display: none !important; }
   #zen-tabs-wrapper { padding-top: 4px; }
 }
 
-
-/* =======        Code for the Workspace Label (Beneath Essentials)   ======= */
 .zen-current-workspace-indicator-name {
   font-weight: 600;
 }
@@ -134,10 +121,10 @@ button.zen-workspace-creation-profile,
 
 
 /* ==========================================================================
-                            Workspace Button Element
+                            Workspace Button — Base
    ========================================================================== */
 
-/* ======     Fixed-size Buttons | Customize Toolbar Layout Bugfix     ====== */
+/* Fixed-size buttons; fixes Customize Toolbar layout bug */
 #zen-workspaces-button toolbarbutton {
   flex-shrink: 0 !important;
   width: 28px !important;
@@ -157,7 +144,7 @@ button.zen-workspace-creation-profile,
   transition: box-shadow 0.3s ease, background-color 0.3s ease;
 }
 
-/* ====   Individual Workspaces | Base Code For WS; Styles Modify This   ==== */
+/* Individual workspace icons */
 #zen-workspaces-button .subviewbutton {
   border-radius: calc(var(--ws-border-radius) - 4.5px) !important;
   font-size: 14px !important;
@@ -190,7 +177,7 @@ button.zen-workspace-creation-profile,
   transform: scale(0.9) !important;
 }
 
-/* =====   Active Workspace Indicator | Code For BG Behind Current WS   ===== */
+/* Active workspace: sits above others, always full color */
 #zen-workspaces-button .subviewbutton[active] {
   position: relative;
   overflow: hidden !important;
@@ -200,24 +187,8 @@ button.zen-workspace-creation-profile,
 }
 
 
-/* ================        Workspace Style Variations        ================
-
- *  Different visual styles can be applied to the workspace buttons. These 
- *  styles can be set easily in browser. To do so, follow these steps:
-
- *  Simply open a new tab; Type in "about:config"; Note the warning; Type in
- *  "ws-style" in config search; Set "Number" & click "+"; Set # & you're done!
-
-
- *  0 | Transparent w/ no BG. "Floating-Dock" look. Dots for non-active spaces. 
- *  1 | Subtle BG w/ active highlighted. Glows on hover (toggles). Icons shown. 
- *  2 | Dock layout with container fill. AKA, mostly 1 w/ background & glow.
-
- *  Note: If none is set, defaults to Style 1.
-   ========================================================================== */
-
 /* ==========================================================================
-                           Style 1 | Subtle Container                        
+                           Style 1 | Subtle Container  (default)
    ========================================================================== */
 @media not ((-moz-pref("ws-style", 0)) or (-moz-pref("ws-style", 2))) {
 
@@ -250,7 +221,7 @@ button.zen-workspace-creation-profile,
   }
 }
 
-/* =======     ws-hide-glow | Hides The Hover Glow Over Workspaces    ======= */
+/* ws-hide-glow: disables the hover glow on Style 1 */
 @media (-moz-pref("ws-hide-glow")) {
   #zen-workspaces-button {
     background-color: var(--ws-color-min) !important;
@@ -262,8 +233,9 @@ button.zen-workspace-creation-profile,
   }
 }
 
+
 /* ==========================================================================
-                      Styles 0 & 2 | Shared Dock Container                  
+                      Styles 0 & 2 | Shared Dock Container
    ========================================================================== */
 @media ((-moz-pref("ws-style", 0)) or (-moz-pref("ws-style", 2))) {
 
@@ -331,7 +303,7 @@ button.zen-workspace-creation-profile,
     z-index: 2 !important;
   }
 
-  /* =====   Neighbour Magnification | Hovered Spaces Appear Magnified   ===== */
+  /* Neighbour magnification effect */
   #zen-workspaces-button .subviewbutton:hover + .subviewbutton:not([active]),
   #zen-workspaces-button .subviewbutton:has(+ .subviewbutton:hover):not([active]) {
     transform: scale(1.15) !important;
@@ -348,7 +320,7 @@ button.zen-workspace-creation-profile,
     transition: transform 0.35s cubic-bezier(0.25, 1, 0.5, 1), opacity 0.3s ease-out;
   }
 
-  /* =====   Workspace Dots | Makes WS Icons Dots, Except Active Space  ===== */
+  /* Inactive workspaces shown as dots; active & hovered show the icon */
   #zen-workspaces-button .subviewbutton::before {
     content: "•";
     position: absolute;
@@ -367,10 +339,7 @@ button.zen-workspace-creation-profile,
   }
 }
 
-/* ========      The majority of code for Style 0 & 2 are above      ======== */
-/* ========      Below is the specific code differences for each     ======== */
-
-/* =======     Style 0: No background    ======= */
+/* Style 0: floating dock, no background */
 @media (-moz-pref("ws-style", 0)) {
   #zen-workspaces-button,
   #zen-workspaces-button:hover {
@@ -379,7 +348,7 @@ button.zen-workspace-creation-profile,
   }
 }
 
-/* =======     Style 2: With background    ======= */
+/* Style 2: dock with background + glow */
 @media (-moz-pref("ws-style", 2)) {
   #zen-workspaces-button {
     background-color: var(--ws-color-min) !important;
@@ -392,7 +361,11 @@ button.zen-workspace-creation-profile,
   }
 }
 
-/* ============================== Format Fixing ============================= */                         
+
+/* ==========================================================================
+                               Format Fixes
+   ========================================================================== */
+
 #zen-sidebar-foot-buttons > .customization-target {
   display: flex !important;
   align-items: center !important;
@@ -403,5 +376,5 @@ button.zen-workspace-creation-profile,
 }
 
 /* ==========================================================================
-                       Zen Browser Custom CSS by Pryemium                    
+                       Zen Browser Custom CSS by Pryemium
    ========================================================================== */
