@@ -9,7 +9,7 @@
     {
         "property": "ws-style",
         "label": "Changes the style of the Workspace buttons",
-        "type": "button-group",
+        "type": "dropdown",
         "options": [
             { "label": "Style 1", "value": 1 },
             { "label": "Style 2", "value": 2 },
