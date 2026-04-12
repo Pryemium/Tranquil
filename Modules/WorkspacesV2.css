@@ -218,7 +218,7 @@ button.zen-workspace-creation-profile,
 
   #zen-workspaces-button .subviewbutton[active] {
     background-color: light-dark(rgba(255,255,255,0.12), rgba(255,255,255,0.07)) !important;
-    box-shadow: 0 0 4px rgba(0, 0, 0, 0.2) !important;
+    box-shadow: 0 0 2px rgba(0, 0, 0, 0.2) !important;
   }
 }
 
