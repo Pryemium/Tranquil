@@ -1,12 +1,5 @@
 [
     {
-        "property": "browser.tabs.allow_transparent_browser",
-        "label": "Allow Transparent Browser [Disable Before Uninstall]",
-        "type": "checkbox",
-        "defaultValue": false
-    },
-
-    {
         "property": "ws-style",
         "label": "Workspace Button Style",
         "description": "Style 1: subtle container with active highlight. Style 0: floating dock (dots for inactive). Style 2: dock with background fill.",
@@ -48,7 +41,7 @@
     },
 
     {
-        "property": "ws-grayscale",
+        "property": "ws-gray",
         "label": "Inactive Icon Grayscale",
         "description": "How much color is drained from inactive workspace icons. 100% = fully gray, 0% = full color.",
         "type": "dropdown",
@@ -62,7 +55,7 @@
     },
 
     {
-        "property": "ws-hide-indicator",
+        "property": "ws-hide-name",
         "label": "Hide Workspace Label",
         "description": "Hides the current workspace name label shown beneath Essentials.",
         "type": "checkbox",
