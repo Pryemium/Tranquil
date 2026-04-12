@@ -1,0 +1,8 @@
+[
+    {
+        "property": "browser.tabs.allow_transparent_browser",
+        "label": "Allow transparency [Disable Before Uninstall]",
+        "type": "checkbox",
+        "defaultValue": false
+    }
+]
