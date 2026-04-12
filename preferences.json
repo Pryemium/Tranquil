@@ -1,19 +1,79 @@
 [
     {
         "property": "browser.tabs.allow_transparent_browser",
-        "label": "Allow transparency [Disable Before Uninstall]",
+        "label": "Allow Transparent Browser [Disable Before Uninstall]",
         "type": "checkbox",
         "defaultValue": false
     },
-    
+
     {
         "property": "ws-style",
-        "label": "Changes the style of the Workspace buttons",
+        "label": "Workspace Button Style",
+        "description": "Style 1: subtle container with active highlight. Style 0: floating dock (dots for inactive). Style 2: dock with background fill.",
         "type": "dropdown",
         "options": [
-            { "label": "Style 1", "value": 1 },
-            { "label": "Style 2", "value": 2 },
-            { "label": "Style 3", "value": 3 }
+            { "label": "Style 1 — Subtle Container (Default)", "value": 1 },
+            { "label": "Style 0 — Floating Dock",              "value": 0 },
+            { "label": "Style 2 — Dock with Background",       "value": 2 }
         ]
+    },
+
+    {
+        "property": "ws-radius",
+        "label": "Workspace Button Roundness",
+        "description": "Controls the border-radius of workspace buttons and panels. Default is 10px.",
+        "type": "dropdown",
+        "options": [
+            { "label": "Default (10px)", "value": 10 },
+            { "label": "4px  — Sharp",  "value":  4 },
+            { "label": "6px  — Slight", "value":  6 },
+            { "label": "8px  — Soft",   "value":  8 },
+            { "label": "12px — Rounder","value": 12 },
+            { "label": "16px — Round",  "value": 16 },
+            { "label": "20px — Pill",   "value": 20 }
+        ]
+    },
+
+    {
+        "property": "ws-opacity",
+        "label": "Workspace Button Opacity",
+        "description": "Controls background fill intensity of workspace buttons. Default is 8% base fill.",
+        "type": "dropdown",
+        "options": [
+            { "label": "Default (8% base)",  "value":  8 },
+            { "label": "Low    (4% base)",   "value":  4 },
+            { "label": "High   (12% base)",  "value": 12 },
+            { "label": "Higher (20% base)",  "value": 20 }
+        ]
+    },
+
+    {
+        "property": "ws-grayscale",
+        "label": "Inactive Icon Grayscale",
+        "description": "How much color is drained from inactive workspace icons. 100% = fully gray, 0% = full color.",
+        "type": "dropdown",
+        "options": [
+            { "label": "100% — Fully Gray (Default)", "value": 100 },
+            { "label": "75%  — Mostly Gray",          "value":  75 },
+            { "label": "50%  — Half Color",            "value":  50 },
+            { "label": "25%  — Mostly Color",          "value":  25 },
+            { "label": "0%   — Full Color",            "value":   0 }
+        ]
+    },
+
+    {
+        "property": "ws-hide-indicator",
+        "label": "Hide Workspace Label",
+        "description": "Hides the current workspace name label shown beneath Essentials.",
+        "type": "checkbox",
+        "defaultValue": false
+    },
+
+    {
+        "property": "ws-hide-glow",
+        "label": "Hide Hover Glow (Style 1 only)",
+        "description": "Disables the glow effect that appears when hovering over the workspace container in Style 1.",
+        "type": "checkbox",
+        "defaultValue": false
     }
 ]
