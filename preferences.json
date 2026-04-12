@@ -4,5 +4,12 @@
         "label": "Allow transparency [Disable Before Uninstall]",
         "type": "checkbox",
         "defaultValue": false
+    },
+    
+    {
+        "property": "ws-style",
+        "label": "Changes the style of the Workspace buttons"
+        "type": "radio",
+        "defaultValue": 1
     }
 ]
