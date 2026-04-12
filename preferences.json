@@ -9,7 +9,12 @@
     {
         "property": "ws-style",
         "label": "Changes the style of the Workspace buttons",
-        "type": "radio",
+        "type": "button-group",
+        "options": [
+            { "label": "Style 1", "value": 1 },
+            { "label": "Style 2", "value": 2 },
+            { "label": "Style 3", "value": 3 }
+        ],
         "defaultValue": 1
     }
 ]
