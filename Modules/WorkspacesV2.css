@@ -392,6 +392,16 @@ button.zen-workspace-creation-profile,
   }
 }
 
+/* ============================== Format Fixing ============================= */                         
+#zen-sidebar-foot-buttons > .customization-target {
+  display: flex !important;
+  align-items: center !important;
+}
+
+#zen-create-new-button {
+  margin-left: auto !important;
+}
+
 /* ==========================================================================
                        Zen Browser Custom CSS by Pryemium                    
    ========================================================================== */
