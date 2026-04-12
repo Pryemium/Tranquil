@@ -41,7 +41,7 @@
     },
 
     {
-        "property": "ws-gray",
+        "property": "ws-grayscale",
         "label": "Inactive Icon Grayscale",
         "description": "How much color is drained from inactive workspace icons. 100% = fully gray, 0% = full color.",
         "type": "dropdown",
