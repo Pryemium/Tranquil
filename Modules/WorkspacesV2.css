@@ -223,7 +223,8 @@ button.zen-workspace-creation-profile,
 }
 
 /* ws-hide-glow: disables the hover glow on Style 1 */
-@media (-moz-pref("ws-hide-glow")) and (-moz-pref("ws-style", "1")) {
+@media (-moz-pref("ws-hide-glow")) and (-moz-pref("ws-style", "1")),
+       (-moz-pref("ws-hide-glow")) and (-moz-pref("ws-style", "3")) {
   #zen-workspaces-button {
     background-color: var(--ws-color-min) !important;
     box-shadow: none !important;
