@@ -14,26 +14,27 @@
 
 
 /* ==========================================================================
-                      about:config / Preferences Overrides
+                      Preferences Overrides
    All settings below are configurable via the Tranquil preferences panel.
+   Dropdown prefs are stored as strings by Zen — values must be quoted here.
    ========================================================================== */
 
 /* ws-radius */
-@media (-moz-pref("ws-radius",  4)) { :root { --ws-border-radius:  4px; } }
-@media (-moz-pref("ws-radius",  6)) { :root { --ws-border-radius:  6px; } }
-@media (-moz-pref("ws-radius",  8)) { :root { --ws-border-radius:  8px; } }
-@media (-moz-pref("ws-radius", 12)) { :root { --ws-border-radius: 12px; } }
-@media (-moz-pref("ws-radius", 16)) { :root { --ws-border-radius: 16px; } }
-@media (-moz-pref("ws-radius", 20)) { :root { --ws-border-radius: 20px; } }
+@media (-moz-pref("ws-radius", "4"))  { :root { --ws-border-radius:  4px; } }
+@media (-moz-pref("ws-radius", "6"))  { :root { --ws-border-radius:  6px; } }
+@media (-moz-pref("ws-radius", "8"))  { :root { --ws-border-radius:  8px; } }
+@media (-moz-pref("ws-radius", "12")) { :root { --ws-border-radius: 12px; } }
+@media (-moz-pref("ws-radius", "16")) { :root { --ws-border-radius: 16px; } }
+@media (-moz-pref("ws-radius", "20")) { :root { --ws-border-radius: 20px; } }
 
 /* ws-grayscale */
-@media (-moz-pref("ws-grayscale",  0)) { :root { --ws-grayscale:  0%; } }
-@media (-moz-pref("ws-grayscale", 25)) { :root { --ws-grayscale: 25%; } }
-@media (-moz-pref("ws-grayscale", 50)) { :root { --ws-grayscale: 50%; } }
-@media (-moz-pref("ws-grayscale", 75)) { :root { --ws-grayscale: 75%; } }
+@media (-moz-pref("ws-grayscale", "0"))  { :root { --ws-grayscale:  0%; } }
+@media (-moz-pref("ws-grayscale", "25")) { :root { --ws-grayscale: 25%; } }
+@media (-moz-pref("ws-grayscale", "50")) { :root { --ws-grayscale: 50%; } }
+@media (-moz-pref("ws-grayscale", "75")) { :root { --ws-grayscale: 75%; } }
 
 /* ws-opacity */
-@media (-moz-pref("ws-opacity", 4)) {
+@media (-moz-pref("ws-opacity", "4")) {
   :root {
     --ws-color:        color-mix(in srgb, currentColor  4%, transparent);
     --ws-color-hover:  color-mix(in srgb, currentColor  8%, transparent);
@@ -41,7 +42,7 @@
     --ws-color-shadow: color-mix(in srgb, currentColor 10%, transparent);
   }
 }
-@media (-moz-pref("ws-opacity", 12)) {
+@media (-moz-pref("ws-opacity", "12")) {
   :root {
     --ws-color:        color-mix(in srgb, currentColor 12%, transparent);
     --ws-color-hover:  color-mix(in srgb, currentColor 20%, transparent);
@@ -49,7 +50,7 @@
     --ws-color-shadow: color-mix(in srgb, currentColor 28%, transparent);
   }
 }
-@media (-moz-pref("ws-opacity", 20)) {
+@media (-moz-pref("ws-opacity", "20")) {
   :root {
     --ws-color:        color-mix(in srgb, currentColor 20%, transparent);
     --ws-color-hover:  color-mix(in srgb, currentColor 30%, transparent);
@@ -190,7 +191,7 @@ button.zen-workspace-creation-profile,
 /* ==========================================================================
                            Style 1 | Subtle Container  (default)
    ========================================================================== */
-@media not ((-moz-pref("ws-style", 0)) or (-moz-pref("ws-style", 2))) {
+@media not ((-moz-pref("ws-style", "0")) or (-moz-pref("ws-style", "2"))) {
 
   #zen-workspaces-button {
     background-color: var(--ws-color-min) !important;
@@ -237,7 +238,7 @@ button.zen-workspace-creation-profile,
 /* ==========================================================================
                       Styles 0 & 2 | Shared Dock Container
    ========================================================================== */
-@media ((-moz-pref("ws-style", 0)) or (-moz-pref("ws-style", 2))) {
+@media ((-moz-pref("ws-style", "0")) or (-moz-pref("ws-style", "2"))) {
 
   #zen-workspaces-button {
     height: 30px !important;
@@ -340,7 +341,7 @@ button.zen-workspace-creation-profile,
 }
 
 /* Style 0: floating dock, no background */
-@media (-moz-pref("ws-style", 0)) {
+@media (-moz-pref("ws-style", "0")) {
   #zen-workspaces-button,
   #zen-workspaces-button:hover {
     background-color: transparent !important;
@@ -349,7 +350,7 @@ button.zen-workspace-creation-profile,
 }
 
 /* Style 2: dock with background + glow */
-@media (-moz-pref("ws-style", 2)) {
+@media (-moz-pref("ws-style", "2")) {
   #zen-workspaces-button {
     background-color: var(--ws-color-min) !important;
     box-shadow: 0 2px 12px rgba(0, 0, 0, 0) !important;
