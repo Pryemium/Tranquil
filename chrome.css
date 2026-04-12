@@ -1,3 +1,5 @@
+@import "Modules/WorkspacesV2.css";
+
 @media -moz-pref("browser.tabs.allow_transparent_browser") {
   #tabbrowser-tabpanels browser {
     background-color: transparent !important;
