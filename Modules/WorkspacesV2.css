@@ -191,7 +191,7 @@ button.zen-workspace-creation-profile,
 /* ==========================================================================
                            Style 1 | Subtle Container  (default)
    ========================================================================== */
-@media not ((-moz-pref("ws-style", "0")) or (-moz-pref("ws-style", "2"))) {
+@media ((-moz-pref("ws-style", "1"))) {
 
   #zen-workspaces-button {
     background-color: var(--ws-color-min) !important;
@@ -223,7 +223,7 @@ button.zen-workspace-creation-profile,
 }
 
 /* ws-hide-glow: disables the hover glow on Style 1 */
-@media (-moz-pref("ws-hide-glow")) {
+@media (-moz-pref("ws-hide-glow")) and (-moz-pref("ws-style", "1")) or (-moz-pref("ws-style", "3")) {
   #zen-workspaces-button {
     background-color: var(--ws-color-min) !important;
     box-shadow: none !important;
@@ -236,9 +236,9 @@ button.zen-workspace-creation-profile,
 
 
 /* ==========================================================================
-                      Styles 0 & 2 | Shared Dock Container
+                      Styles 2 & 3 | Shared Dock Container
    ========================================================================== */
-@media ((-moz-pref("ws-style", "0")) or (-moz-pref("ws-style", "2"))) {
+@media ((-moz-pref("ws-style", "2")) or (-moz-pref("ws-style", "3"))) {
 
   #zen-workspaces-button {
     height: 30px !important;
@@ -340,8 +340,8 @@ button.zen-workspace-creation-profile,
   }
 }
 
-/* Style 0: floating dock, no background */
-@media (-moz-pref("ws-style", "0")) {
+/* Style 2: floating dock, no background */
+@media (-moz-pref("ws-style", "2")) {
   #zen-workspaces-button,
   #zen-workspaces-button:hover {
     background-color: transparent !important;
@@ -349,8 +349,8 @@ button.zen-workspace-creation-profile,
   }
 }
 
-/* Style 2: dock with background + glow */
-@media (-moz-pref("ws-style", "2")) {
+/* Style 3: dock with background + glow */
+@media (-moz-pref("ws-style", "3")) {
   #zen-workspaces-button {
     background-color: var(--ws-color-min) !important;
     box-shadow: 0 2px 12px rgba(0, 0, 0, 0) !important;
