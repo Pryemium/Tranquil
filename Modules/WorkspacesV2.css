@@ -1,382 +1,102 @@
-/* ==========================================================================
-                        Workspace Buttons Customization
-   ========================================================================== */
+/* ==============================
+Zen Browser Workspace Buttons V3
+============================== */
 
-/* ===                      CSS Variable Defaults                         === */
+/* ===== Variables ===== */
 :root {
-  --ws-border-radius: 10px;
-  --ws-color:        color-mix(in srgb, currentColor  8%, transparent);
-  --ws-color-hover:  color-mix(in srgb, currentColor 14%, transparent);
-  --ws-color-min:    color-mix(in srgb, currentColor  5%, transparent);
-  --ws-color-shadow: color-mix(in srgb, currentColor 20%, transparent);
-  --ws-grayscale:    100%;
+    --ws-radius:        8px;
+    --ws-gray:          100%;
+
+    --ws-color:         color-mix(in srgb, currentColor  8%, transparent);
+    --ws-color-bg:      color-mix(in srgb, currentColor  5%, transparent);
+    --ws-color-hover:   color-mix(in srgb, currentColor 14%, transparent);
+    --ws-color-shadow:  color-mix(in srgb, currentColor 20%, transparent);
+    
+    /* Internal Variables */
+    --ws-size:          28px;
+    --ws-wrap:          30px;
+    /* Note: ws-opacity & ws-hide-name don't write to root */ 
 }
 
 
-/* ==========================================================================
-                      Preferences Overrides
-   All settings below are configurable via the Tranquil preferences panel.
-   Dropdown prefs are stored as strings by Zen — values must be quoted here.
-   ========================================================================== */
 
-/* ws-radius */
-@media (-moz-pref("ws-radius", "4"))  { :root { --ws-border-radius:  4px; } }
-@media (-moz-pref("ws-radius", "6"))  { :root { --ws-border-radius:  6px; } }
-@media (-moz-pref("ws-radius", "8"))  { :root { --ws-border-radius:  8px; } }
-@media (-moz-pref("ws-radius", "12")) { :root { --ws-border-radius: 12px; } }
-@media (-moz-pref("ws-radius", "16")) { :root { --ws-border-radius: 16px; } }
-@media (-moz-pref("ws-radius", "20")) { :root { --ws-border-radius: 20px; } }
+/* ==============================
+Prferences Settings for Variables
+============================== */
 
-/* ws-grayscale */
-@media (-moz-pref("ws-grayscale", "0"))  { :root { --ws-grayscale:  0%; } }
-@media (-moz-pref("ws-grayscale", "25")) { :root { --ws-grayscale: 25%; } }
-@media (-moz-pref("ws-grayscale", "50")) { :root { --ws-grayscale: 50%; } }
-@media (-moz-pref("ws-grayscale", "75")) { :root { --ws-grayscale: 75%; } }
+/* ws-radius | Workspaces Roundness */
 
-/* ws-opacity */
-@media (-moz-pref("ws-opacity", "4")) {
-  :root {
-    --ws-color:        color-mix(in srgb, currentColor  4%, transparent);
-    --ws-color-hover:  color-mix(in srgb, currentColor  8%, transparent);
-    --ws-color-min:    color-mix(in srgb, currentColor  2%, transparent);
-    --ws-color-shadow: color-mix(in srgb, currentColor 10%, transparent);
-  }
-}
-@media (-moz-pref("ws-opacity", "12")) {
-  :root {
-    --ws-color:        color-mix(in srgb, currentColor 12%, transparent);
-    --ws-color-hover:  color-mix(in srgb, currentColor 20%, transparent);
-    --ws-color-min:    color-mix(in srgb, currentColor  8%, transparent);
-    --ws-color-shadow: color-mix(in srgb, currentColor 28%, transparent);
-  }
-}
-@media (-moz-pref("ws-opacity", "20")) {
-  :root {
-    --ws-color:        color-mix(in srgb, currentColor 20%, transparent);
-    --ws-color-hover:  color-mix(in srgb, currentColor 30%, transparent);
-    --ws-color-min:    color-mix(in srgb, currentColor 12%, transparent);
-    --ws-color-shadow: color-mix(in srgb, currentColor 38%, transparent);
-  }
+
+/* ws-gray | Workspaces Grayscale */
+
+
+/* ws-opacity | Workspaces Opacity */
+
+
+
+
+/* ==============================
+Workspaces Name Label [Above Pins]
+============================== */
+
+/* Hide Workspace Name Label */
+@media (-moz-pref("ws-hide-name")) {
+    .zen-current-workspace-indicator { display: none !important; }
 }
 
-
-/* ==========================================================================
-                            Workspace Creation Panel
-   ========================================================================== */
-
-.zen-workspace-creation-name-wrapper,
-.zen-workspace-creation-profile-wrapper,
-.zen-workspace-creation-edit-theme-button {
-  background-color: var(--ws-color) !important;
-  border-radius: var(--ws-border-radius) !important;
-  box-shadow: 0 0px 3px transparent !important;
-  transition: background-color 0.3s ease, box-shadow 0.3s ease !important;
-}
-
-.zen-workspace-creation-name-wrapper:hover,
-.zen-workspace-creation-profile-wrapper:hover,
-.zen-workspace-creation-edit-theme-button:hover {
-  background-color: var(--ws-color-hover) !important;
-  box-shadow: 0 0px 3px var(--ws-color-shadow) !important;
-}
-
-button.zen-workspace-creation-profile,
-.zen-current-workspace-indicator toolbarbutton > .toolbarbutton-icon {
-  border-radius: calc(var(--ws-border-radius) - 4px) !important;
-}
-
-.zen-workspace-creation-buttons button {
-  border-radius: var(--ws-border-radius) !important;
-}
-
-
-/* ==========================================================================
-                  Workspace Indicator [Name Label & Hover]
-   ========================================================================== */
-
-/* ws-hide-indicator: hides the workspace label beneath Essentials */
-@media (-moz-pref("ws-hide-indicator")) {
-  .zen-current-workspace-indicator { display: none !important; }
-  #zen-tabs-wrapper { padding-top: 4px; }
-}
-
-.zen-current-workspace-indicator-name {
-  font-weight: 600;
-}
-
-#zen-workspaces-button toolbarbutton[dragged="true"] {
-  outline: none !important;
-}
-
+/* Name Label Custom Hover Effects */
 .zen-current-workspace-indicator::before {
-  border-radius: var(--ws-border-radius) !important;
-  box-shadow: 0 0px 3px transparent !important;
-  transition: background-color 0.3s ease, box-shadow 0.3s ease !important;
+    border-radius: var(--ws-radius) !important;
+    box-shadow: 0 0px 3px transparent !important;
+    transition: background-color 0.3s ease, box shadow 0.3s ease !important;
 }
 
 .zen-current-workspace-indicator:hover::before {
-  background-color: var(--ws-color) !important;
-  box-shadow: 0 0px 3px var(--ws-color-shadow) !important;
-  z-index: -1 !important;
+    background-color: var(--ws-color) !important;
+    box-shadow: 0 0px 3px var(--ws-color-shadow) !important;
+    z-index: -1 !important;
 }
 
 
-/* ==========================================================================
-                            Workspace Button — Base
-   ========================================================================== */
 
-/* Fixed-size buttons; fixes Customize Toolbar layout bug */
-#zen-workspaces-button toolbarbutton {
-  flex-shrink: 0 !important;
-  width: 28px !important;
-  height: 30px !important;
-  max-width: 28px !important;
-  min-width: unset !important;
-  padding: 0 !important;
-}
+/* ==============================
+Base For Workspaces Button [Style 0]
+============================== */
 
 #zen-workspaces-button {
-  container-type: initial !important;
-  isolation: isolate !important;
-  width: auto !important;
-  border-radius: calc(var(--ws-border-radius) - 2px) !important;
-  transition: box-shadow 0.3s ease, background-color 0.3s ease;
-}
-
-/* Individual workspace icons */
-#zen-workspaces-button .subviewbutton {
-  border-radius: calc(var(--ws-border-radius) - 4.5px) !important;
-  font-size: 14px !important;
-  width: 28px !important;
-  height: 28px !important;
-  opacity: 0.75 !important;
-  filter: grayscale(var(--ws-grayscale)) !important;
-  transform: scale(1) !important;
-  transform-origin: bottom center !important;
-  transition: background-color 0.2s ease,
-              filter 0.3s ease,
-              opacity 0.3s ease-out,
-              transform 0.2s ease !important;
-}
-
-#zen-workspaces-button .subviewbutton:hover {
-  filter: grayscale(0%) !important;
-  opacity: 0.9 !important;
-}
-
-#zen-workspaces-button .subviewbutton:hover > img,
-#zen-workspaces-button .subviewbutton:hover > svg {
-  opacity: 1 !important;
-}
-
-#zen-workspaces-button .subviewbutton:active {
-  filter: grayscale(0%) !important;
-  transform: scale(0.85) !important;
-}
-
-#zen-workspaces-button .subviewbutton:active:hover {
-  transform: scale(0.9) !important;
-}
-
-/* Active workspace: sits above others, always full color */
-#zen-workspaces-button .subviewbutton[active] {
-  position: relative;
-  overflow: hidden !important;
-  filter: grayscale(0%) !important;
-  opacity: 1 !important;
-  transition: transform 0.3s ease-out !important;
+    container-type: initial !important;
+    isolation: isolate !important;
+    border-radius: var(--ws-radius) !important;
+    transition: box-shadow 0.3s ease, background-color 0.3s ease;
 }
 
 
-/* ==========================================================================
-                           Style 1 | Subtle Container  (default)
-   ========================================================================== */
-@media ((-moz-pref("ws-style", "1"))) {
 
-  #zen-workspaces-button {
-    background-color: var(--ws-color-min) !important;
-    box-shadow: 0 2px 12px rgba(0, 0, 0, 0) !important;
-  }
-
-  #zen-workspaces-button:hover {
-    background-color: var(--ws-color-hover) !important;
-    box-shadow: 0 2px 12px var(--ws-color-shadow) !important;
-  }
-
-  #zen-workspaces-button .subviewbutton {
-    --toolbarbutton-hover-background: color-mix(in srgb,
-      var(--zen-branding-bg-reverse) 10%, transparent 90%) !important;
-  }
-
-  #zen-workspaces-button .subviewbutton:hover {
-    background-color: light-dark(rgba(255,255,255,0), rgba(100,100,100,0)) !important;
-  }
-
-  #zen-workspaces-button .subviewbutton:active {
-    background-color: var(--toolbarbutton-active-background) !important;
-  }
-
-  #zen-workspaces-button .subviewbutton[active] {
-    background-color: light-dark(rgba(255,255,255,0.12), rgba(255,255,255,0.07)) !important;
-    box-shadow: 0 0 2px rgba(0, 0, 0, 0.2) !important;
-  }
-}
-
-/* ws-hide-glow: disables the hover glow on Style 1 */
-@media (-moz-pref("ws-hide-glow")) and (-moz-pref("ws-style", "1")),
-       (-moz-pref("ws-hide-glow")) and (-moz-pref("ws-style", "3")) {
-  #zen-workspaces-button {
-    background-color: var(--ws-color-min) !important;
-    box-shadow: none !important;
-  }
-  #zen-workspaces-button:hover {
-    background-color: var(--ws-color-hover) !important;
-    box-shadow: none !important;
-  }
-}
+/* ==============================
+Workspace Base w/ BG [Style 1]
+============================== */
 
 
-/* ==========================================================================
-                      Styles 2 & 3 | Shared Dock Container
-   ========================================================================== */
-@media ((-moz-pref("ws-style", "2")) or (-moz-pref("ws-style", "3"))) {
-
-  #zen-workspaces-button {
-    height: 30px !important;
-    position: relative !important;
-    overflow: visible !important;
-    z-index: 1;
-  }
-
-  html:not([zen-sidebar-expanded="true"]):not([zen-single-toolbar="true"])
-  #zen-workspaces-button {
-    height: auto !important;
-    width: 30px !important;
-  }
-
-  #zen-workspaces-button .subviewbutton {
-    display: flex !important;
-    align-items: center !important;
-    justify-content: center !important;
-    width: 28px !important;
-    height: 28px !important;
-    border-radius: 12px !important;
-    font-size: 1.1em !important;
-    transform: scale(1) !important;
-    transform-origin: bottom center !important;
-    transition: transform 0.35s cubic-bezier(0.25, 1, 0.5, 1),
-                filter 0.35s ease,
-                opacity 0.3s ease-out,
-                color 0.3s ease-out !important;
-    color: transparent !important;
-    background-color: transparent !important;
-    box-shadow: none !important;
-    animation: none !important;
-    --toolbarbutton-hover-background: unset !important;
-  }
-
-  #zen-workspaces-button .subviewbutton:hover {
-    transform: scale(1.4) !important;
-    opacity: 1 !important;
-    z-index: 3 !important;
-    color: inherit !important;
-  }
-
-  #zen-workspaces-button .subviewbutton:active {
-    transform: scale(1) !important;
-    filter: grayscale(var(--ws-grayscale)) !important;
-  }
-
-  #zen-workspaces-button .subviewbutton:active:hover {
-    transform: scale(1) !important;
-  }
-
-  #zen-workspaces-button .subviewbutton[active] {
-    background-color: transparent !important;
-    box-shadow: none !important;
-    overflow: unset !important;
-    position: static !important;
-    animation: none !important;
-    color: inherit !important;
-  }
-
-  #zen-workspaces-button .subviewbutton[active]:hover {
-    transform: scale(1.2) !important;
-    z-index: 2 !important;
-  }
-
-  /* Neighbour magnification effect */
-  #zen-workspaces-button .subviewbutton:hover + .subviewbutton:not([active]),
-  #zen-workspaces-button .subviewbutton:has(+ .subviewbutton:hover):not([active]) {
-    transform: scale(1.15) !important;
-    opacity: 0.9 !important;
-    z-index: 2 !important;
-    transition: transform 0.35s cubic-bezier(0.25, 1, 0.5, 1), opacity 0.3s ease-out;
-  }
-
-  #zen-workspaces-button .subviewbutton:hover + .subviewbutton + .subviewbutton:not([active]),
-  #zen-workspaces-button .subviewbutton:has(+ .subviewbutton + .subviewbutton:hover):not([active]) {
-    transform: scale(1) !important;
-    opacity: 0.85 !important;
-    z-index: 1 !important;
-    transition: transform 0.35s cubic-bezier(0.25, 1, 0.5, 1), opacity 0.3s ease-out;
-  }
-
-  /* Inactive workspaces shown as dots; active & hovered show the icon */
-  #zen-workspaces-button .subviewbutton::before {
-    content: "•";
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -56.5%);
-    font-size: 2em;
-    color: light-dark(white, rgba(255, 255, 255, 0.35));
-    pointer-events: none;
-    transition: opacity 0.3s ease;
-  }
-
-  #zen-workspaces-button .subviewbutton:hover::before,
-  #zen-workspaces-button .subviewbutton[active]::before {
-    opacity: 0;
-  }
-}
-
-/* Style 2: floating dock, no background */
-@media (-moz-pref("ws-style", "2")) {
-  #zen-workspaces-button,
-  #zen-workspaces-button:hover {
-    background-color: transparent !important;
-    box-shadow: none !important;
-  }
-}
-
-/* Style 3: dock with background + glow */
-@media (-moz-pref("ws-style", "3")) {
-  #zen-workspaces-button {
-    background-color: var(--ws-color-min) !important;
-    box-shadow: 0 2px 12px rgba(0, 0, 0, 0) !important;
-  }
-
-  #zen-workspaces-button:hover {
-    background-color: var(--ws-color-hover) !important;
-    box-shadow: 0 2px 12px var(--ws-color-shadow) !important;
-  }
-}
 
 
-/* ==========================================================================
-                               Format Fixes
-   ========================================================================== */
+/* ==============================
+Workspace Base Restyle [Style 2 & 3]
+============================== */
 
-#zen-sidebar-foot-buttons > .customization-target {
-  display: flex !important;
-  align-items: center !important;
-}
+/* Style 2 Toggle */
 
-#zen-create-new-button {
-  margin-left: auto !important;
-}
+/* Style 3 Toggle */
 
-/* ==========================================================================
-                       Zen Browser Custom CSS by Pryemium
-   ========================================================================== */
+
+
+
+/* ==============================
+Formatting Fix For Workspaces
+============================== */
+
+
+
+
+/* ==============================
+      Custom CSS by Pryemium      
+============================== */
