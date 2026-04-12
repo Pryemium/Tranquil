@@ -13,8 +13,8 @@
         "type": "dropdown",
         "options": [
             { "label": "Style 1 — Subtle Container (Default)", "value": "1" },
-            { "label": "Style 0 — Floating Dock",              "value": "0" },
-            { "label": "Style 2 — Dock with Background",       "value": "2" }
+            { "label": "Style 2 — Floating Dock",              "value": "2" },
+            { "label": "Style 3 — Dock with Background",       "value": "3" }
         ]
     },
 
