@@ -139,8 +139,6 @@ button.zen-workspace-creation-profile,
   container-type: initial !important;
   isolation: isolate !important;
   width: auto !important;
-  padding: 2px !important;
-  gap: 2px !important;
   border-radius: calc(var(--ws-border-radius) - 2px) !important;
   transition: box-shadow 0.3s ease, background-color 0.3s ease;
 }
