@@ -153,6 +153,7 @@ button.zen-workspace-creation-profile,
   height: 28px !important;
   opacity: 0.75 !important;
   filter: grayscale(var(--ws-grayscale)) !important;
+  transform-origin: bottom center !important;
   transition: background-color 0.2s ease,
               filter 0.3s ease,
               opacity 0.3s ease-out,
