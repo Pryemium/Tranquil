@@ -14,7 +14,7 @@ Zen Browser Workspace Buttons V3
     
   /* Internal Variables */
   --ws-size:          26px;
-  --ws-wrap:          28px;
+  --ws-wrap:          30px;
   /* Note: ws-opacity, ws-style & ws-hide-name don't write to root */ 
 }
 
@@ -131,6 +131,7 @@ Base For Workspaces Button [Style 0]
 #zen-workspaces-button .subviewbutton:hover {
     filter: grayscale(0%) !important!;
     opacity: 1 !important;
+    background-color: var(--ws-color-hover);
 }
 /* Clicking Space Shrinks Icon */
 #zen-workspaces-button .subviewbutton:active:hover {
