@@ -13,8 +13,8 @@ Zen Browser Workspace Buttons V3
   --ws-color-shadow:  color-mix(in srgb, currentColor 20%, transparent);
     
   /* Internal Variables */
-  --ws-size:          26px;
-  --ws-wrap:          30px;
+  --ws-size:          28px;
+  --ws-wrap:          32px;
   /* Note: ws-opacity, ws-style & ws-hide-name don't write to root */ 
 }
 
@@ -112,7 +112,7 @@ Base For Workspaces Button [Style 0]
 
 /* Individual Workspaces Button Element */
 #zen-workspaces-button .subviewbutton {
-  border-radius: calc(var(--ws-radius) - 4px) !important;
+  border-radius: calc(var(--ws-radius) - 4.5px) !important;
   width: var(--ws-size) !important;
   height: var(--ws-size) !important;
 
@@ -129,9 +129,8 @@ Base For Workspaces Button [Style 0]
 }
 /* Hovering Over Other Spaces Brightens*/
 #zen-workspaces-button .subviewbutton:hover {
-    filter: grayscale(0%) !important!;
-    opacity: 1 !important;
-    background-color: var(--ws-color-hover);
+  filter: grayscale(0%) !important;
+  opacity: 1 !important;
 }
 /* Clicking Space Shrinks Icon */
 #zen-workspaces-button .subviewbutton:active:hover {
