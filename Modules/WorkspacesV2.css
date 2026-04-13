@@ -113,8 +113,8 @@ Base For Workspaces Button [Style 0]
 /* Individual Workspaces Button Element */
 #zen-workspaces-button .subviewbutton {
   border-radius: calc(var(--ws-radius) - 4px) !important;
-  width: var(--ws-wrap) !important;
-  height: var(--ws-radius) !important;
+  width: var(--ws-size) !important;
+  height: var(--ws-size) !important;
 
   opacity: 0.6 !important;
   filter: grayscale(var(--ws-grayscale)) !important;
