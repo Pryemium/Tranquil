@@ -31,12 +31,12 @@
       "property": "ws-style",
       "label": "Workspace Button Style",
 
-      "defaultValue": "0",
+      "defaultValue": 0,
       "options": [
-        { "label": "None    | Default)",      "value": "0" },
-        { "label": "Style 1 | Background",    "value": "1" },
-        { "label": "Style 2 | Floating Dock", "value": "2" },
-        { "label": "Style 3 | Dock w/ BG",    "value": "3" }
+        { "label": "None    | Default)",      "value": 0 },
+        { "label": "Style 1 | Background",    "value": 1 },
+        { "label": "Style 2 | Floating Dock", "value": 2 },
+        { "label": "Style 3 | Dock w/ BG",    "value": 3 }
         ]
     },
 
@@ -45,13 +45,13 @@
       "property": "ws-radius",
       "label": "Workspace Button Roundness",
     
-      "defaultValue": "8",
+      "defaultValue": 8,
       "options": [
-        { "label": "Box     | 0px",   "value": "0" },
-        { "label": "Sharp   | 4px",   "value": "4" },
-        { "label": "Default | 8px",   "value": "8" },
-        { "label": "Round   | 16px",  "value": "16" },
-        { "label": "Pill    | 20px",  "value": "20" }
+        { "label": "Box     | 0px",   "value": 0 },
+        { "label": "Sharp   | 4px",   "value": 4 },
+        { "label": "Default | 8px",   "value": 8 },
+        { "label": "Round   | 16px",  "value": 16 },
+        { "label": "Pill    | 20px",  "value": 20 }
       ]
     }
 ]
