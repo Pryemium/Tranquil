@@ -1,70 +1,39 @@
 [
     {
+        "property": "ws-hide-name"
+    },
+
+    {
+        "property": "ws-hide-glow",
+        "label": "Hides the glow around certain UI elements",
+        "type": "checkbox"
+    },
+
+    {
         "property": "ws-style",
-        "label": "Workspace Button Style",
-        "description": "Style 1: subtle container with active highlight. Style 0: floating dock (dots for inactive). Style 2: dock with background fill.",
+        "label": "Workspace Button Style | Set to None for Default",
         "type": "dropdown",
         "options": [
-            { "label": "Style 1 — Subtle Container (Default)", "value": "1" },
-            { "label": "Style 2 — Floating Dock",              "value": "2" },
-            { "label": "Style 3 — Dock with Background",       "value": "3" }
+            { "label": "Style 1 | Background",    "value": "1" },
+            { "label": "Style 2 | Floating Dock", "value": "2" },
+            { "label": "Style 3 | Dock w/ BG",    "value": "3" }
         ]
     },
 
     {
         "property": "ws-radius",
-        "label": "Workspace Button Roundness",
-        "description": "Controls the border-radius of workspace buttons and panels. Default is 10px.",
+        "label": "Workspace Button Roundness | Set to None for 8px Default",
         "type": "dropdown",
         "options": [
-            { "label": "0px | Box",   "value":  "0" },
-            { "label": "4px | Sharp",  "value":  "4" },
-            { "label": "None | 8px",    "value":  "8" },
-            { "label": "12px | Round", "value": "12" },
-            { "label": "18px | Pill",    "value": "18" }
+            {"label": "Box   | 0px",  "value": "1"  },
+            {"label": "Sharp | 4px",  "value": "4"  },
+            {"label": "Round | 16px", "value": "16" },
+            {"label": "Pill  | 20px", "value": "20" }
         ]
-    },
-
-    {
-        "property": "ws-opacity",
-        "label": "Workspace Button Opacity",
-        "description": "Controls background fill intensity of workspace buttons. Default is 8% base fill.",
-        "type": "dropdown",
-        "options": [
-            { "label": "Default (8% base)",  "value":  "8" },
-            { "label": "Low    (4% base)",   "value":  "4" },
-            { "label": "High   (12% base)",  "value": "12" },
-            { "label": "Higher (20% base)",  "value": "20" }
-        ]
-    },
-
-    {
-        "property": "ws-grayscale",
-        "label": "Inactive Icon Grayscale",
-        "description": "How much color is drained from inactive workspace icons. 100% = fully gray, 0% = full color.",
-        "type": "dropdown",
-        "options": [
-            { "label": "100% — Fully Gray (Default)", "value": "100" },
-            { "label": "75%  — Mostly Gray",          "value":  "75" },
-            { "label": "50%  — Half Color",           "value":  "50" },
-            { "label": "25%  — Mostly Color",         "value":  "25" },
-            { "label": "0%   — Full Color",           "value":   "0" }
-        ]
-    },
-
-    {
-        "property": "ws-hide-name",
-        "label": "Hide Workspace Label",
-        "description": "Hides the current workspace name label shown beneath Essentials.",
-        "type": "checkbox",
-        "defaultValue": false
-    },
-
-    {
-        "property": "ws-hide-glow",
-        "label": "Hide Hover Glow (Style 1 only)",
-        "description": "Disables the glow effect when hovering over the workspace container in Style 1.",
-        "type": "checkbox",
-        "defaultValue": false
     }
 ]
+
+/* 
+Variables not written to root but need preferences:
+ws-opacity  |  ws-style  |  ws-hide-name  |  ws-hide-glow 
+*/ 
