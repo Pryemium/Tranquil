@@ -1,39 +1,57 @@
 [
+  {
+    "type": "text",
+    "label": "⚙️ Tranquil Settings Page",
+    "margin": "30px 0 15px 0",
+    "size": "20px"
+  },
+
     {
-        "property": "ws-hide-name",
-        "label": "Hide Workspace Name Label",
-        "default": false,
-        "type": "checkbox"
+      "type": "checkbox",
+      "property": "ws-hide-name",
+      "label": "Disable Workspace Name Label",
+      "defaultValue": false
     },
+  
+  {
+    "type": "separator",
+    "label": "📄 Workspaces Customization",
+    "margin": "15px 0 15px 0"
+  },
+
     {
-        "property": "ws-hide-glow",
-        "label": "Hides the glow around certain UI elements",
-        "default": false,
-        "type": "checkbox"
+      "type": "checkbox",
+      "property": "ws-hide-glow",
+      "label": "Hides the glow around certain UI elements",
+      "defaultValue": false
     },
+
     {
-        "property": "ws-style",
-        "label": "Workspace Button Style",
-        "type": "dropdown",
-        "default": "none",
-        "options": [
-            { "label": "None (Default)",          "value": "none" },
-            { "label": "Style 1 | Background",    "value": "1" },
-            { "label": "Style 2 | Floating Dock", "value": "2" },
-            { "label": "Style 3 | Dock w/ BG",    "value": "3" }
+      "type": "dropdown",
+      "property": "ws-style",
+      "label": "Workspace Button Style",
+
+      "defaultValue": "0",
+      "options": [
+        { "label": "None    | Default)",      "value": "0" },
+        { "label": "Style 1 | Background",    "value": "1" },
+        { "label": "Style 2 | Floating Dock", "value": "2" },
+        { "label": "Style 3 | Dock w/ BG",    "value": "3" }
         ]
     },
+
     {
-        "property": "ws-radius",
-        "label": "Workspace Button Roundness",
-        "type": "dropdown",
-        "default": "8",
-        "options": [
-            { "label": "Default (8px)", "value": "8" },
-            { "label": "Box   | 0px",   "value": "0" },
-            { "label": "Sharp | 4px",   "value": "4" },
-            { "label": "Round | 16px",  "value": "16" },
-            { "label": "Pill  | 20px",  "value": "20" }
-        ]
+      "type": "dropdown",
+      "property": "ws-radius",
+      "label": "Workspace Button Roundness",
+    
+      "defaultValue": "8",
+      "options": [
+        { "label": "Box     | 0px",   "value": "0" },
+        { "label": "Sharp   | 4px",   "value": "4" },
+        { "label": "Default | 8px",   "value": "8" },
+        { "label": "Round   | 16px",  "value": "16" },
+        { "label": "Pill    | 20px",  "value": "20" }
+      ]
     }
 ]
