@@ -25,10 +25,10 @@ Prferences Settings for Variables
 ============================== */
 
 /* ws-radius | Workspaces Roundness */
-@media (-moz-pref("ws-radius", "0"))  { :root { --ws-border-radius:  0px;  } }
-@media (-moz-pref("ws-radius", "4"))  { :root { --ws-border-radius:  4px;  } }
-@media (-moz-pref("ws-radius", "12")) { :root { --ws-border-radius:  12px; } }
-@media (-moz-pref("ws-radius", "18")) { :root { --ws-border-radius:  18px; } }
+@media (-moz-pref("ws-radius", "0"))  { :root { --ws-radius:  1px;  } }
+@media (-moz-pref("ws-radius", "4"))  { :root { --ws-radius:  4px;  } }
+@media (-moz-pref("ws-radius", "16")) { :root { --ws-radius:  16px; } }
+@media (-moz-pref("ws-radius", "20")) { :root { --ws-radius:  20px; } }
 
 /* ws-grayscale | Workspaces Grayscale */
 @media (-moz-pref("ws-grayscale", "0"))  { :root { --ws-grayscale:  0%; } }
@@ -96,13 +96,14 @@ Base For Workspaces Button [Style 0]
 #zen-workspaces-button {
   container-type: initial !important;
   isolation: isolate !important;
+  overflow: visible !important;
   width: auto !important;
 
   height: var(--ws-wrap) !important;
   border-radius: calc(var(--ws-radius) - 2px) !important;
 }
 
-/* Any button in sidebars' "Holder"  */
+/* Any button in sidebar "Holder"  */
 #zen-workspaces-button toolbarbutton {
   width: var(--ws-wrap) !important;
   height: var(--ws-wrap) !important;
@@ -136,7 +137,7 @@ Base For Workspaces Button [Style 0]
 #zen-workspaces-button .subviewbutton:active:hover {
   transform: scale(0.85) !important;
 }
-/* Active Space is Brighter*/
+/* Current Space is Brighter*/
 #zen-workspaces-button .subviewbutton[active] {
   position: relative;
   overflow: hidden !important;
@@ -154,6 +155,27 @@ Workspace Base w/ BG [Style 1]
 @media (-moz-pref("ws-style", "1")) {
   #zen-workspaces-button {
     background-color: var(--ws-color-bg) !important;
+  }
+  
+  /* Brighter Hover Color Due to Background (See ^) */
+  #zen-workspaces-button:hover {
+    background-color: var(--ws-color-hover) !important;
+
+    /* Box Shadow = A Type of "Glow" Effect to Elements */
+    @media not (-moz-pref("ws-hide-glow")) {
+      box-shadow: 0 2px 12px var(--ws-color-shadow) !important;
+    }
+  }
+
+  /* Dims WS Background on Click to Indicate */
+  #zen-workspaces-button .subviewbutton:active {
+    background-color: var(--toolbarbutton-active-background) !important;
+  }
+
+  /* Current Space Has a Brighter Background */
+  #zen-workspaces-button .subviewbutton[active] {
+    background-color: light-dark(rgba(255,255,255,0.12), rgba(255,255,255,0.07)) !important;
+    box-shadow: 0 0 2px rgba(0, 0, 0, 0.2) !important;
   }
 }
 
