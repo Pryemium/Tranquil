@@ -1,39 +1,39 @@
 [
     {
-        "property": "ws-hide-name"
+        "property": "ws-hide-name",
+        "label": "Hide Workspace Name Label",
+        "default": false,
+        "type": "checkbox"
     },
-
     {
         "property": "ws-hide-glow",
         "label": "Hides the glow around certain UI elements",
+        "default": false,
         "type": "checkbox"
     },
-
     {
         "property": "ws-style",
-        "label": "Workspace Button Style | Set to None for Default",
+        "label": "Workspace Button Style",
         "type": "dropdown",
+        "default": "none",
         "options": [
+            { "label": "None (Default)",          "value": "none" },
             { "label": "Style 1 | Background",    "value": "1" },
             { "label": "Style 2 | Floating Dock", "value": "2" },
             { "label": "Style 3 | Dock w/ BG",    "value": "3" }
         ]
     },
-
     {
         "property": "ws-radius",
-        "label": "Workspace Button Roundness | Set to None for 8px Default",
+        "label": "Workspace Button Roundness",
         "type": "dropdown",
+        "default": "8",
         "options": [
-            {"label": "Box   | 0px",  "value": "1"  },
-            {"label": "Sharp | 4px",  "value": "4"  },
-            {"label": "Round | 16px", "value": "16" },
-            {"label": "Pill  | 20px", "value": "20" }
+            { "label": "Default (8px)", "value": "8" },
+            { "label": "Box   | 0px",   "value": "0" },
+            { "label": "Sharp | 4px",   "value": "4" },
+            { "label": "Round | 16px",  "value": "16" },
+            { "label": "Pill  | 20px",  "value": "20" }
         ]
     }
 ]
-
-/* 
-Variables not written to root but need preferences:
-ws-opacity  |  ws-style  |  ws-hide-name  |  ws-hide-glow 
-*/ 
