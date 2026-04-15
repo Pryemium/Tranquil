@@ -4,9 +4,7 @@
     "name": "Tranquil",
     "description": "A private Zen mod with a variety of customization options",
     "homepage": "https://github.com/Pryemium/Tranquil",
-    "style": {
-        "chrome": "chrome.css"
-    },
+    "style": "chrome.css",
     "scripts": {
         "invisible-button": {
             "path": "./Js/invisible-button.js",
