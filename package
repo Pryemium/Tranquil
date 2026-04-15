@@ -1,0 +1,9 @@
+{
+  "name": "tranquil-settings",
+  "version": "0.0.1",
+  "id": "Tranquil@Pryemium",
+  "description": "Customizes Zen UI and adds a spacer button",
+  "main": "invisible-button.js",
+  "settings": "preferences.json",
+  "author": "Pryemium"
+}
