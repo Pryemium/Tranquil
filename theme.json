@@ -6,9 +6,10 @@
     "homepage": "https://github.com/Pryemium/Tranquil",
     "style": "chrome.css",
     "scripts": {
-        "Js/invisible-button.js": {
+        "Js/invisible-button.uc.js": {
             "name": "Invisible Button",
-            "description": "Adds a button to the foot buttons."
+            "description": "Adds a button to the foot buttons.",
+            "include": ["chrome://browser/content/browser.xhtml"]
         }
     },
     "preferences": "preferences.json",
