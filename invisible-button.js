@@ -1,4 +1,45 @@
-// ==UserScript==
+console.log("!!! TRANQUIL SCRIPT LOADED !!!");
+(function () {
+  "use strict";
+
+  const BUTTON_ID = "zen-invisible-extra-button";
+
+  function inject() {
+    const toolbar = document.getElementById("zen-sidebar-foot-buttons");
+    if (!toolbar || document.getElementById(BUTTON_ID)) return;
+
+    const btn = document.createElementNS(
+      "http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul",
+      "toolbarbutton"
+    );
+
+    btn.id = BUTTON_ID;
+    btn.setAttribute("class", "toolbarbutton-1 zen-sidebar-action-button");
+    
+    // Using opacity ensures it maintains its 'box' and pushes other elements
+    btn.style.cssText = `
+      opacity: 0 !important;
+      pointer-events: none !important;
+      width: 28px !important;
+      min-width: 28px !important;
+    `;
+
+    toolbar.appendChild(btn);
+  }
+
+  // More robust than a retry loop: Observe the document for the toolbar
+  const observer = new MutationObserver(() => {
+    if (document.getElementById("zen-sidebar-foot-buttons")) {
+      inject();
+      // Optional: observer.disconnect(); // Keep it if you want to ensure it stays injected
+    }
+  });
+
+  observer.observe(document.documentElement, { childList: true, subtree: true });
+  
+  // Initial attempt
+  inject();
+})();// ==UserScript==
 // @name           Invisible Extra Toolbarbutton
 // @description    Adds an invisible extra toolbarbutton to the Zen sidebar foot toolbar
 // @author         You
