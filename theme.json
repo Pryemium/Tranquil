@@ -1,9 +1,0 @@
-{
-  "id": "Tranquil",
-  "name": "Tranquil",
-  "description": "A private Zen mod with a variety of customization options",
-  "version": "1.0.0",
-  "author": "Pryemium",
-  "style": "chrome.css",
-  "preferences": "preferences.json"
-}
