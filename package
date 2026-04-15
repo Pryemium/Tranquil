@@ -1,9 +1,10 @@
 {
-  "name": "tranquil-settings",
+  "id": "Tranquil",
+  "name": "Tranquil",
+  "description": "A private Zen mod with a variety of customization options",
   "version": "0.0.1",
-  "id": "Tranquil@Pryemium",
-  "description": "Customizes Zen UI and adds a spacer button",
+  "author": "Pryemium",
   "main": "invisible-button.js",
-  "settings": "preferences.json",
-  "author": "Pryemium"
+  "style": "chrome.css",
+  "preferences": "preferences.json"
 }
