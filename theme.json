@@ -6,8 +6,7 @@
     "homepage": "https://github.com/Pryemium/Tranquil",
     "style": "chrome.css",
     "scripts": {
-        "invisible-button": {
-            "path": "./Js/invisible-button.js",
+        "Js/invisible-button.js": {
             "name": "Invisible Button",
             "description": "Adds a button to the foot buttons."
         }
