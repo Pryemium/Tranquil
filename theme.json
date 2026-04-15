@@ -5,9 +5,7 @@
     "description": "A private Zen mod with a variety of customization options",
     "homepage": "https://github.com/Pryemium/Tranquil",
     "style": {
-        "chrome": {
-            "path": "./Main/Chrome.css"
-        }
+        "chrome": "Chrome.css"
     },
     "scripts": {
         "invisible-button": {
@@ -16,9 +14,7 @@
             "description": "Adds a button to the foot buttons."
         }
     },
-    "preferences": {
-        "path": "./Main/preferences.json"
-    },
+    "preferences": "preferences.json",
     "readme": "N/A",
     "author": "Pryemium",
     "version": "0.0.1",
