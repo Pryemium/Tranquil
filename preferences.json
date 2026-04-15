@@ -1,8 +1,5 @@
 [
   {
-    "scripts": ["invisible-button.js"]
-  },
-  {
     "type": "text",
     "label": "⚙️ Tranquil Settings Page",
     "margin": "30px 0 15px 0",
